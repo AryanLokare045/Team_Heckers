@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> <!-- Import Lato font -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- Import Fira Sans font -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            display: flex; /* Use flexbox for layout */
+            height: 100vh; /* Full height of the viewport */
+        }
+        .left-side {
+            background-color: #ffffff; /* White background for left side */
+            width: 50%; /* Half width */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+        .right-side {
+            background-color: #001f3f; /* Dark navy blue background for right side */
+            width: 50%; /* Half width */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Left align the content */
+            padding: 20px; /* Padding for spacing */
+            color: #00aaff; /* Bright blue text color */
+        }
+        h1 {
+            font-family: "Fira Sans", sans-serif; /* Set to Fira Sans font */
+            font-weight: 500;
+            font-style: normal;
+            text-align: center; /* Center text */
+            color: #000; /* Change text color to black */
+        }
+        .login-form, .create-account-form {
+            background-color: white; /* Light dark background for the forms */
+            border: 2px solid #001f3f;
+            border-radius: 10px;
+            padding: 30px;
+            width: 400px; /* Fixed width for the form */
+            box-shadow: 0 0 20px #001f3f;
+            backdrop-filter: blur(10px); /* Blurred background effect */
+            position: relative; /* Allow positioning of inner elements */
+            display: none; /* Initially hidden */
+        }
+        .login-form.active, .create-account-form.active {
+            display: block; /* Show the active form */
+        }
+        .login-form input, .create-account-form input {
+            width: 100%;
+            padding: 15px; /* Increased padding for comfort */
+            margin-bottom: 15px;
+            border: 1px solid black; /* Black border for the input */
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #000; /* Change text color to black for visibility */
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            outline: none; /* Removes the default outline */
+        }
+        .login-form input::placeholder, .create-account-form input::placeholder {
+            color: #000; /* Placeholder text color */
+            opacity: 0.7; /* Slightly transparent placeholder */
+            font-weight: bold; /* Bold placeholder text */
+        }
+        .login-form input:hover, .login-form input:focus,
+        .create-account-form input:hover, .create-account-form input:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02); /* Slightly enlarge the input */
+        }
+        .login-form button, .create-account-form button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFD700;
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 1.1em; /* Larger font size for button */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease; /* Added color transition */
+        }
+        .login-form button:hover, .create-account-form button:hover {
+            background-color: #FFA500;
+            transform: scale(1.05); /* Slightly enlarge the button */
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.5); /* Glow effect */
+            color: #fff; /* Change text color to white on hover */
+        }
+        .dont-account {
+            margin: 20px 0;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+        }
+        .create-account {
+            font-weight: bold;
+            color: black;
+            text-align: center; /* Center the text */
+            margin-top: 10px; /* Add some space above */
+            position: static; /* Remove absolute positioning */
+        }
+        .create-account a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .create-account a:hover {
+            color: blue;
+        }
+        /* ChatterDash Section */
+        .chatterdash-info {
+            max-width: 400px;
+            text-align:left; /* Left align text in ChatterDash */
+            margin-top: -120px; /* Margin for spacing */
+        }
+        .chatterdash-info h2 {
+            font-size: 3em; /* Increased heading size by one more size */
+            margin-bottom: 10px;
+        }
+        .chatterdash-info p {
+            font-size: 1.2em; /* Increased paragraph size */
+            color: white; /* Change paragraph color to white */
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .login-form, .create-account-form {
+                width: 90%;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }  
+        }
+    </style>
+</head>
+<body>
+    <div class="left-side">
+        <div class="login-form active"> <!-- Login Form -->
+            <h1>Login</h1>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div class="dont-account">Don't have an account?</div>
+            <div class="create-account">
+                <a href="#" onclick="toggleForms(event)">Create a new account</a> <!-- Toggle forms -->
+            </div>
+        </div>
+        
+        <div class="create-account-form"> <!-- Create Account Form -->
+            <h1>Create Account</h1>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+            <div class="create-account">
+                <a href="#" onclick="toggleForms(event)">Back to Login</a> <!-- Toggle forms -->
+            </div>
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="chatterdash-info">
+            <h2>ChatterDash</h2>
+            <p>Experience the future of learning with ChatterDash, a voice-controlled quiz platform designed to enhance your knowledge through interactive and engaging quizzes. Learn effortlessly by speaking, and let us guide your journey!</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            const loginForm = document.querySelector('.login-form');
+            const createAccountForm = document.querySelector('.create-account-form');
+
+            loginForm.classList.toggle('active');
+            createAccountForm.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
