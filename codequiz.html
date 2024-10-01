@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Language Coding Quiz</title>
+    <title>Coding Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,34 +13,43 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: url('C:/Users/Nihar Gunaji Sawant/Downloads/premium_photo-1661964187664-e26f70e1a224.jpeg');
+            background-image: url('https://img.freepik.com/free-vector/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
         .quiz-container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color:rgb(27, 51, 122);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            max-width: 800px;
             width: 90%;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: white;
         }
         .question {
-            margin-bottom: 1.5rem;
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color:rgb(0, 128, 255);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-style: bold;
         }
         input[type="text"] {
             width: 100%;
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
+            padding: 8px;
+            margin-top: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1em;
         }
         button {
             display: block;
@@ -60,26 +69,26 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Multi-Language Coding Quiz</h1>
+        <h1>Coding Quiz</h1>
         <form id="quiz-form">
             <div class="question">
-                <p>1. (HTML) What is the purpose of the 'srcset' attribute in the &lt;img&gt; tag?</p>
+                <p><b>1. (HTML) What tag is used to create a hyperlink?</p></b>
                 <input type="text" name="q1" required>
             </div>
             <div class="question">
-                <p>2. (CSS) Explain the concept of CSS Grid and how it differs from Flexbox.</p>
+                <p><b>2. (CSS) What property is used to change text color?</p></b>
                 <input type="text" name="q2" required>
             </div>
             <div class="question">
-                <p>3. (C) What is the difference between 'malloc()' and 'calloc()' functions in C?</p>
+                <p><b>3. (C) What function is used to print output to the console?</p></b>
                 <input type="text" name="q3" required>
             </div>
             <div class="question">
-                <p>4. (C++) Explain the concept of 'move semantics' in C++11 and its benefits.</p>
+                <p><b>4. (C++) What keyword is used to define a class?</p></b>
                 <input type="text" name="q4" required>
             </div>
             <div class="question">
-                <p>5. (C/C++) What is the purpose of the 'volatile' keyword in C and C++?</p>
+                <p><b>5. (JavaScript) What keyword is used to declare a variable?</p></b>
                 <input type="text" name="q5" required>
             </div>
             <button type="submit">Submit Quiz</button>
