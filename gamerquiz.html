@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Multiplayer Games Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('C:/Users/Nihar Gunaji Sawant/Downloads/GameQuizBg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 95%;
+            border: 5px solid transparent;
+            background-clip: padding-box;
+            animation: border-glow 3s infinite alternate;
+        }
+
+        @keyframes border-glow {
+            from { border-color: #ff4d4d; }
+            to { border-color: #4d79ff; }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            margin-bottom: 2.5rem;
+            background-color: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+        }
+
+        .question p {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            border: 3px solid #3498db;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Popular Multiplayer Games Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. In BGMI (Battlegrounds Mobile India), what is the name of the most famous and original map?</p>
+                <input type="text" name="q1" required>
+            </div>
+            <div class="question">
+                <p>2. In Among Us, what color is typically associated with the character that's often jokingly called "sus"?</p>
+                <input type="text" name="q2" required>
+            </div>
+            <div class="question">
+                <p>3. In Minecraft, what material do you need to craft a diamond pickaxe besides diamonds?</p>
+                <input type="text" name="q3" required>
+            </div>
+            <div class="question">
+                <p>4. In Fall Guys, what is the name of the final round where only one player can win?</p>
+                <input type="text" name="q4" required>
+            </div>
+            <div class="question">
+                <p>5. In Clash Royale, how many elixir does it cost to deploy a Fireball spell?</p>
+                <input type="text" name="q5" required>
+            </div>
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Quiz submitted! Great job on completing the Popular Multiplayer Games Quiz!');
+        });
+    </script>
+</body>
+</html>
