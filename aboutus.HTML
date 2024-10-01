@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Gaming Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle, #1b77ac, #282c34);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+        
+        .title{
+            color: white;
+        }
+        .quiz-container {
+            background: radial-gradient(circle, #1871a5, #1c1cb3);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 100px rgba(3, 204, 240, 0.2);
+            max-width: 800px;
+            width: 95%;
+            border: 5px solid transparent;
+            background-clip: padding-box;
+            animation: border-glow 3s infinite alternate;
+            
+        }
+
+        @keyframes border-glow {
+            from { border-color: #ff4d4d; }
+            to { border-color: #4d79ff; }
+        }
+
+        h1 {
+            text-align: center;
+            color:chartreuse;
+            font-size: 2rem;
+            margin-bottom: -50px;
+            text-shadow: 2px 2px 4px rgba(8, 6, 9, 1.9);
+        }
+        h2{
+            text-align: center;
+            
+        }
+        .title {
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-weight: bold; /* Example font styling */
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(8, 8, 9, 1.9); /* Example font size */
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the line */
+    bottom: 0;
+    height: 3px; /* Thickness of the underline */
+    width: 10%; /* Set the width of the underline */
+    background: linear-gradient(90deg, red, rgb(204, 141, 24));
+    transition: all 0.3s ease;
+    transform: translateX(-50%); /* Move it left by half its width */
+}
+
+.title:hover::after {
+    height: 5px; /* Increase thickness on hover */
+    background: linear-gradient(90deg, rgb(192, 167, 23), rgb(204, 24, 24)); /* Different colors on hover */
+}
+
+.title {
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    color: rgb(0, 0, 0); /* Default text color */
+    font-weight: bold; /* Example font styling */
+    font-size: 1.2em; /* Example font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the line */
+    bottom: 0;
+    height: 3px; /* Thickness of the underline */
+    width: 50%; /* Set the width of the underline */
+    background: linear-gradient(90deg, red, rgb(204, 141, 24));
+    transition: all 0.3s ease;
+    transform: translateX(-50%); /* Move it left by half its width */
+}
+
+.title:hover {
+    color: rgb(141, 236, 16); /* Change text color on hover */
+}
+
+
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            background-color: #f86707;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:hover {
+            background-color: #e6a20e;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>ABOUT US  </h1>
+        <form id="quiz-form">
+            <div class="INFORMATION">
+                <h2 class="title"  style="font-size: 50px;" font-family: :"potta one";>TEAM HECKER</h2>
+                
+                <br>
+                
+                
+            <P style="color: rgb(0, 0, 0);"><I><B>AIM</B></I> : Voice controlled tools for enhanced learning in skill ecosystem   </P>
+            
+                <P  style="color: rgb(255, 255, 255);">
+                    Revolutionizing Learning with Voice-Controlled <B>QUIZ</B> Tools
+                    We're a team of passionate innovators dedicated to transforming education through technology. Our mission is to create immersive, interactive, and accessible learning experiences that empower individuals to acquire new skills and knowledge effectively.
+                    <li style="color: rgb(255, 255, 255);">Our Vision</li>
+                    <ul style="color: rgb(255, 255, 255);">* We envision a future where learning is engaging, personalized, and accessible to everyone. By harnessing the power of voice technology and gaming, we aim to:</ul>
+                    <ul style="color: rgb(255, 255, 255);"> * Enhance Skill Acquisition: Develop voice-controlled gaming tools that simulate real-world scenarios, making learning more practical and effective.</ul>
+                     <ul style="color: rgb(255, 255, 255);" >* Promote Inclusivity: Create accessible learning experiences that cater to learners of all abilities, including those with disabilities.</ul>
+                     <ul style="color: rgb(255, 255, 255);">* Personalize Learning: Tailor educational content to individual needs and preferences, ensuring maximum engagement and retention.</ul>
+                   </P>       
+                   <br>        
+                <button type="submit">THANK YOU!!</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("THANKS FOR VISITING");
+        });
+    </script>
+</body>
+</html
